@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'HAPPYMASS';
+    src: url('HAPPYMASS.otf') format('opentype'),
+         url('HAPPYMASS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LINEMAS';
+    src: url('LINEMAS.otf') format('opentype'),
+         url('LINEMAS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: black;
+    margin: 0;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.barra {
+    width: 100%;
+}
+
+/* Barra superior */
+.barra-1 {
+    background-color: red;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, #6A00F4 40%, black 100%);
+    background: linear-gradient(135deg, #00AEEF, #6A00F4);
+    filter: blur(9px);
+    width: 105%;
+    margin-left: -2.5%;
+}
+
+.barra-2 {
+    background-color: blue;
+    height: 80px;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    z-index: 2;
+    margin-top: -60px;
+    background: linear-gradient(135deg, #00AEEF, #6A00F4);
+    font-size: 16px;
+    font-family: 'LINEMAS';
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+h1 {
+    padding-top: 15px;
+    padding-left: 50px;
+    text-align: left;
+    color: #ffffff;
+    font-family: 'Pacifico', 'LINEMAS', cursive;
+    font-size: 36px;
+    margin: 0;
+}
+
+nav {
+    margin-right: 20px;
+}
+
+nav a {
+    margin-left: 20px;
+    font-family: 'HAPPYMASS', sans-serif;
+    font-size: 16px;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Waveform Visualization */
+.waveform {
+    margin-top: 100px; /* Space below the fixed top bar */
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.waveform img {
+    width: 100%;
+    height: auto;
+}
+
+/* Song Title */
+.song-title {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.song-title h2 {
+    font-size: 24px;
+    font-family: 'HAPPYMASS', sans-serif;
+    color: #ffffff;
+}
+
+/* Playback Controls */
+.playback-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.control-btn {
+    background: linear-gradient(135deg, #00AEEF, #6A00F4);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn.play-pause {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    max-width: 800px;
+    height: 5px;
+    background: #333;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.progress {
+    width: 50%; /* Example progress */
+    height: 100%;
+    background: linear-gradient(135deg, #00AEEF, #6A00F4);
+    border-radius: 5px;
+}
+
+/* Bottom Logo
