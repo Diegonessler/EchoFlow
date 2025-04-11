@@ -2,31 +2,26 @@
 <html>
   <head>
     <title>Login</title>
-    <link rel='stylesheet' href='stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <div class="barra barra-1"></div>
     <div class="barra barra-2"><h1>EchoFlow</h1></div>
-     
   </head>
   <body>
     <div class="titulo">
-      <h1 class="h1-body">    </h1>
-      <h1 class="h1-body">    </h1>
+      <h1 class="h1-body"></h1>
+      <h1 class="h1-body"></h1>
     </div>
  
     <div class="container">
-     <input placeholder="Usuário" class="input" name="text" type="text">
-     <input placeholder="Senha" class="input" name="password" type="password">
-     <button class="btn">Entrar
-      <a href="perfil.ejs">Entrar</a>
-     </button>
-    <a href="cadastro.ejs">cadastrar</a>
+      <form action="/login" method="POST"> <!-- Adicionado formulário com action para /login -->
+        <input placeholder="Usuário" class="input" name="text" type="text">
+        <input placeholder="Senha" class="input" name="password" type="password">
+        <button class="btn" type="submit">Entrar</button> <!-- type="submit" para enviar o form -->
+      </form>
+    </div>
     
- </div>
-   <div>
-   
-   </div>
+    <div></div>
   </body>
   <footer>
-    <img src="../public/images/fundo-Photoroom.png" alt="logo">
   </footer>
- </html>
+</html>
