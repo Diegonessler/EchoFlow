@@ -1,5 +1,4 @@
-const mysql = require('mysql2/promise');
-
+const mysql = require('msql2/promise');
 
 async function conectarBD() 
 {
@@ -44,4 +43,4 @@ async function buscarUsuario(usuario)
 
 
 
-module.exports = {buscarUsuario}
+module.exports = {buscarUsuario,}
