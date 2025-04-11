@@ -3,6 +3,7 @@
 /**
  * Module dependencies.
  */
+global.banco = require('../banco');
 
 var app = require('../app');
 var debug = require('debug')('echoflow:server');
