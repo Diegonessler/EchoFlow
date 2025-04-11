@@ -1,267 +1,198 @@
-@font-face {
-    font-family: 'HAPPYMASS';
-    src: url('HAPPYMASS.otf') format('opentype'),
-         url('HAPPYMASS.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'LINEMAS';
-    src: url('LINEMAS.otf') format('opentype'),
-         url('LINEMAS.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    padding: 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background: black;
-    margin: 0; /* Remove default margin for better layout control */
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  font: 14px "Arial", sans-serif;
+  background: black url('../images/fundo-Photoroom.png') no-repeat bottom right;
+  background-size: 400px;
 }
 
 a {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .barra {
-    width: 100%;
+  width: 100%;
 }
 
-/* Barra superior */
 .barra-1 {
-    background-color: red; /* Cor da primeira barra */
-    height: 80px; /* Barra 1 maior */
-    position: fixed; /* Posicionamento fixo */
-    top: 0; /* Posiciona no topo da tela */
-    left: 0; /* Alinha ao lado esquerdo da tela */
-    z-index: 1;
-    background: linear-gradient(to bottom, #6A00F4 40%, black 100%); /* Degradê na parte inferior */
-    background: linear-gradient(135deg, #00AEEF, #6A00F4); /* Degradê diagonal */
-    filter: blur(9px);
-    width: 105%; /* A largura da barra 1 é um pouco maior que a da barra 2 */
-    margin-left: -2.5%; /* Ajuste para centralizar a barra 1 e deixá-la maior */
+  background: linear-gradient(135deg, #00AEEF, #6A00F4);
+  filter: blur(9px);
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 105%;
+  margin-left: -2.5%;
 }
 
 .barra-2 {
-    background-color: blue; /* Cor da segunda barra */
-    height: 80px; /* Barra 2 menor */
-    position: fixed; /* Posicionamento fixo */
-    top: 40px; /* Posiciona logo abaixo da barra 1 */
-    left: 0; /* Alinha ao lado esquerdo da tela */
-    z-index: 2; /* Barra azul ficará acima da vermelha */
-    margin-top: -60px; /* Move a barra azul para cima */
-    background: linear-gradient(135deg, #00AEEF, #6A00F4); /* Degradê diagonal */
-    font-size: 16px; /* Tamanho da fonte */
-    font-family: 'LINEMAS';
-    display: flex; /* Use flexbox to align h1 and header */
-    align-items: center; /* Vertically center items */
-    justify-content: space-between; /* Space between h1 and header */
-    padding: 0 20px; /* Add padding for better spacing */
+  background: linear-gradient(135deg, #00AEEF, #6A00F4);
+  height: 80px;
+  position: fixed;
+  top: 40px;
+  left: 0;
+  z-index: 2;
+  margin-top: -60px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
 }
 
-h1 {
-    padding-top: 15px;
-    padding-left: 50px;
-    text-align: left;
-    color: #ffffff;
-    font-family: 'Pacifico', 'LINEMAS', cursive; /* Use a script font for "EchoFlow" */
-    font-size: 36px; /* Larger font size to match the image */
-    margin: 0; /* Remove default margin */
+.barra-2 h1 {
+  padding-left: 50px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.titulo {
+  text-align: center;
+  margin: 100px 0 40px 0;
 }
 
 .h1-body {
-    padding: 20px;
-    color: rgb(255, 255, 255);
-    text-align: center; /* Centraliza o texto */
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
 }
 
-/* Estilos padrão para todos os navegadores */
-.top-bar {
-    background: linear-gradient(to right, #007BFF, #6a0dad);
-    padding: 20px;
-    text-align: left;
-}
-
-@supports (-webkit-touch-callout: none) {
-    .barra-1 {
-        width: 100%; /* Garante que não fique maior que a tela */
-    }
-}
-
-.login-test {
-    padding: 2px;
-}
-
-.login {
-    padding-left: 2px;
+.h1-body:nth-child(2) {
+  display: none;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px; /* Increased from 30px to 60px for more spacing */
+  margin-left: 50px;
+  width: 100%;
+  max-width: 250px;
 }
 
-.img-metade-direita {
-    position: absolute;
-    top: 0px; /* Começa logo abaixo da barra */
-    left: 50%;
-    width: 50vw;
-    height: calc(100vh - 60px); /* Reduz a altura da barra */
-    object-fit: cover;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8); /* Sombra interna preta */
+.input {
+  background-color: #212121;
+  width: 80%;
+  height: 30px;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #00AEEF;
+  border-radius: 25px;
+  color: white;
+  font-size: 13px;
+  outline: none;
+  margin-bottom: 14px; /* Adiciona um espaçamento entre os inputs */
 }
 
-/* Header with Search Bar and Logo */
-header {
-    display: flex; /* Use flexbox to align input and img */
-    align-items: center; /* Vertically center the items */
-    gap: 10px; /* Space between search bar and logo */
-    margin-right: 40px; /* Added to create space from the right edge */
-    margin-top: 30px;
+.input::placeholder {
+  color: #aaa;
 }
 
-header input {
-    padding: 9px;
-    border-radius: 20px;
-    border: none;
-    background-color: #333;
-    color: white;
-    width: 300px;
+.input:focus {
+  color: rgb(0, 255, 255);
+  background-color: #212121;
+  outline-color: rgb(0, 255, 255);
+  box-shadow: -4px -3px 20px rgb(154, 9, 173);
+  transition: .1s;
+  transition-property: box-shadow;
 }
 
-header input::placeholder {
-    color: #ccc; /* Light gray placeholder text to match the image */
+.btn {
+  --border-color: linear-gradient(-45deg, #00AEEF, #6A00F4);
+  --border-width: 0.125em;
+  --curve-size: 0.5em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  color: var(--color);
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.3em 1.2em;
+  font-size: 13px;
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  clip-path: polygon(
+    0% var(--curve-size),
+    var(--curve-size) 0,
+    100% 0,
+    100% calc(100% - var(--curve-size)),
+    calc(100% - var(--curve-size)) 100%,
+    0 100%
+  );
+  transition: color 250ms;
+  width: 100%;
+  max-width: 110px;
 }
 
-header img.header-logo {
-    width: 50px; /* Smaller size for the logo next to the search bar */
-    height: auto;
+.btn::after,
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 }
 
-/* Seção de Destaque */
-.highlight {
-    background: linear-gradient(to right, #00b7ff, #8a2be2);
-    margin: 100px auto 20px; /* Add top margin to avoid overlap with fixed header */
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 100%;
-    max-width: 1200px;
+.btn::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
 }
 
-.highlight h2 {
-    font-size: 24px; /* Slightly larger for emphasis */
-    margin-bottom: 10px;
-    font-family: 'HAPPYMASS', sans-serif;
-    color: #ffffff;
+@keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%;
+  }
+  50% {
+    background-position: 70% 100%;
+  }
+  100% {
+    background-position: 31% 0%;
+  }
 }
 
-.highlight p {
-    font-size: 16px; /* Slightly larger for readability */
-    margin-bottom: 15px;
-    font-family: 'HAPPYMASS', sans-serif;
-    color: #ffffff;
+.btn::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+    var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+    var(--border-width) calc(100% - var(--border-width))
+  );
+  transition: clip-path 500ms;
 }
 
-.highlight button {
-    padding: 10px 20px;
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: 'HAPPYMASS', sans-serif;
+.btn:where(:hover, :focus)::after {
+  clip-path: polygon(
+    calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width))
+  );
+  transition: 200ms;
 }
 
-/* Seções de Playlists e Álbuns */
-section {
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    display: flex; /* Use flexbox for centering */
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex; /* Center horizontally */
-    margin-left: flex; /* Center the section itself */
-    margin-right: auto;
+.btn:where(:hover, :focus) {
+  color: #fff;
 }
-
-section h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 8px;
-    justify-items: center;
-}
-
-.card-link {
-    text-decoration: none;
-    color: inherit;
-}
-
-.card {
-    background-color: #2a2a2a;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    width: 140px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: 0 0 15px 5px rgba(0, 183, 255, 0.7), 0 0 25px 10px rgba(138, 43, 226, 0.5);
-    transform: scale(1.05);
-}
-
-.card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.card p {
-    padding: 10px;
-    font-size: 14px;
-}
-
-/* Footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    max-width: 1240px;
-    text-align: center;
-    background-color: #1a1a1a;
-    padding: 10px;
-    left: 50%;
-    transform: translateX(-50%); /* Center the footer */
-}
-
-footer img {
-    width: 100px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}
-
-h3 {
-    color: #ffffff;
-}
-
-h6 {
-    color: #ffffff;
-}
-
-p {
-    color: #ffffff;
-}
-
-/* Remove the generic img rule to avoid affecting all images */
